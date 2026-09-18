@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Adwaita Sans";
+  src: url("./fonts/AdwaitaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 🟢 FIXED: Forces all interactive forms and inputs to drop the newspaper serif look */
+:root, *, input, button, select, textarea {
+  font-family: "Adwaita Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #1d1f23; /* Matches your main application canvas hex */
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  color: #f5f5f7;
+}

@@ -1,0 +1,501 @@
+.browser {
+  width: 100%;
+  height: 100%;
+  background: #1d1f23;
+  color: #f5f5f7;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.toolbar {
+  height: 74px;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  background: #141519;
+  border-bottom: 1px solid #292a2e;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.toolbar-button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #b9bbc2;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.toolbar-button:hover {
+  background: #292b30;
+  color: #ffffff;
+}
+
+.toolbar-button.menu-button.active {
+  background: #292b30;
+  color: #ffffff;
+}
+
+.address-form {
+  flex: 1;
+  width: auto;
+  max-width: none;
+  min-width: 180px;
+  height: 44px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  background: #25272c;
+  border: 1px solid #33353b;
+  border-radius: 22px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.address-form:focus-within {
+  background: #2a2c31;
+  border-color: #50535b;
+}
+
+.address-form input,
+.home-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.address-form input::placeholder,
+.home-search input::placeholder {
+  color: #8e9199;
+}
+
+.search-icon {
+  color: #8e9199;
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.menu-button {
+  font-size: 23px;
+  flex-shrink: 0;
+}
+
+.browser-content-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #1d1f23;
+}
+
+.new-tab {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8vh;
+}
+
+.homepage-logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.new-tab h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+}
+
+.new-tab p {
+  margin: 10px 0 28px;
+  color: #858891;
+  font-size: 14px;
+}
+
+.home-search {
+  width: min(620px, 80vw);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  background: #25272c;
+  border: 1px solid #33353b;
+  border-radius: 26px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.home-search:focus-within {
+  background: #2a2c31;
+  border-color: #4b4e56;
+}
+
+.embedded-viewport {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.web-content-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+}
+
+.toolbar-button.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+/* --- CENTERED DIALOG BOX WINDOW LAYOUT MODULES --- */
+
+.dialog-overlay-shield {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px); /* Premium soft blur layer behind the box */
+  display: grid;
+  place-items: center;
+  z-index: 99999;
+}
+
+.settings-popup-panel {
+  width: 340px;
+  background: #18191c;
+  border: 1px solid #33353b;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: dialogScaleIn 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes dialogScaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.dialog-header-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+}
+
+.dialog-header-strip h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.dialog-close-x-btn {
+  background: transparent;
+  border: 0;
+  color: #8e9199;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+
+.dialog-close-x-btn:hover {
+  background: #25272c;
+  color: #ffffff;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8e9199;
+  font-weight: 600;
+}
+
+.menu-select-dropdown {
+  width: 100%;
+  height: 36px;
+  background: #25272c;
+  border: 1px solid #3c3e44;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 0 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.theme-toggle-strip {
+  display: flex;
+  background: #25272c;
+  padding: 4px;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.theme-pill {
+  flex: 1;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #b9bbc2;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.theme-pill.active {
+  background: #1d1f23;
+  color: #ffffff;
+}
+
+.language-select {
+  background: #25272c;
+  border: 1px solid #3c3e44;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 3px 6px;
+  cursor: pointer;
+}
+
+.menu-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  padding: 0 8px;
+  font-size: 14px;
+  color: #dcddde;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.menu-item-row:not(.disabled):hover {
+  background: #25272c;
+  color: #ffffff;
+}
+
+.menu-item-row.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.menu-action {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+}
+
+.item-action {
+  color: #8e9199;
+  font-size: 12px;
+}
+
+.downloads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.download-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #25272c;
+  font-size: 12px;
+}
+
+.download-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.download-state {
+  color: #8e9199;
+  flex-shrink: 0;
+}
+
+.settings-notice {
+  margin: -4px 0 0;
+  color: #8e9199;
+  font-size: 12px;
+  text-align: center;
+}
+
+.item-badge {
+  font-size: 11px;
+  background: #1d1f23;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #8e9199;
+}
+
+.menu-divider {
+  height: 1px;
+  background: #2d2f36;
+  margin: 2px 0;
+}
+
+.credits-display-card {
+  background: #111214;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.credits-app-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.credits-author-line {
+  font-size: 12px;
+  color: #8e9199;
+  margin: 0;
+}
+
+.author-profile-link {
+  color: #3584e4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.author-profile-link:hover {
+  text-decoration: underline;
+}
+
+.light-theme {
+  background: #f4f5f7;
+  color: #202124;
+}
+
+.light-theme .toolbar,
+.light-theme .settings-popup-panel {
+  background: #ffffff;
+  border-color: #d9dce1;
+}
+
+.light-theme .browser-content-container {
+  background: #f4f5f7;
+}
+
+.light-theme .homepage-logo-img {
+  filter: invert(1) brightness(1.08);
+}
+
+.light-theme .address-form,
+.light-theme .home-search,
+.light-theme .theme-toggle-strip,
+.light-theme .menu-select-dropdown,
+.light-theme .language-select {
+  background: #ffffff;
+  border-color: #c8ccd2;
+  color: #202124;
+}
+
+.light-theme .address-form input,
+.light-theme .home-search input {
+  color: #202124;
+}
+
+.light-theme .theme-pill.active {
+  background: #e5e7eb;
+  color: #202124;
+}
+
+.light-theme .menu-item-row {
+  color: #34373d;
+}
+
+.light-theme .menu-action:hover {
+  background: #e5e7eb;
+}
+
+.light-theme .credits-display-card {
+  background: #f0f1f3;
+}
+
+.light-theme .download-item {
+  background: #e5e7eb;
+}
+
+.light-theme .credits-app-title,
+.light-theme .dialog-header-strip h3 {
+  color: #202124;
+}
+
+/* --- MEDIA BREAKPOINTS --- */
+@media (max-width: 700px) {
+  .toolbar {
+    gap: 6px;
+    padding: 10px;
+  }
+  .navigation {
+    display: none;
+  }
+  .address-form {
+    margin: 0 8px;
+    min-width: 0;
+  }
+  .new-tab h1 {
+    font-size: 28px;
+  }
+}
